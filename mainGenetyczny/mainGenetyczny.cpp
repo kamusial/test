@@ -19,6 +19,7 @@ int main()
 	wczytywanie.wczytaj_zamowienia();
 	wczytywanie.wczytaj_procesy();
 
+	// nowa zmiana super
 	
 	//Licz obliczanie;
 
