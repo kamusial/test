@@ -8,27 +8,21 @@
 #include "Wczytaj.h"
 #include "Licz.h"
 
-
 int main()
 {
 	
 
-	Wczytaj wczytywanie;
+	Wczytaj& wczytywanie = Wczytaj::GetInstance();
+	Wczytaj& wczytywanie2 = Wczytaj::GetInstance();
+
 	wczytywanie.wczytaj_przejscia("dane_in/przejscia.csv");
 	wczytywanie.wczytaj_bufory("dane_in/bufory.csv");
 	wczytywanie.wczytaj_zamowienia();
 	wczytywanie.wczytaj_procesy();
 
-	// nowa zmiana super
-	//2gi comment
-	
-	//Licz obliczanie;
-
-	//ilosc_pracownikow zapotrzebowanie = licz_zapotrzebowanie(LL_V1, LL_V2, RL_V1, RL_V2, zamowienia);
-
-	//vector<Pracownik> vektor_pracownikow = stworz_pracownikow(zapotrzebowanie);
-
-	//vector<vector<int>> harmonogram = wczytaj_bazowy_harmonogram();
+	Licz obliczanie;
+	obliczanie.licz_zapotrzebowanie();
+	obliczanie.stworz_pracownikow();
 
 	getchar(); //oczekiwanie na wciœniêcie klawisza
 	return 0;

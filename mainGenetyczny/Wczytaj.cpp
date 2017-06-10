@@ -2,7 +2,13 @@
 #include "Wczytaj.h"
 
 Wczytaj::Wczytaj()
-{};
+{}
+
+Wczytaj& Wczytaj::GetInstance()
+{
+	static Wczytaj instance;
+	return instance;
+}
 
 void Wczytaj::wczytaj_przejscia(string sciezka)
 {

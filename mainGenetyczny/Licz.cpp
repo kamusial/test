@@ -3,12 +3,11 @@
 #include "Pracownik.h"
 
 
-/*
 Licz::Licz()
 {};
 
-void Licz::zapotrzebowanie_proces(const vector<operacja>& proc, float& czas_spawacz, float& czas_monter,
-	const zamowienie& zam)
+void Licz::zapotrzebowanie_czas(const vector<Wczytaj::operacja>& proc, float& czas_spawacz, float& czas_monter,
+	const Wczytaj::zamowienie& zam)
 {
 	for (int i = 0; i < proc.size(); i++)
 	{
@@ -25,21 +24,22 @@ void Licz::zapotrzebowanie_proces(const vector<operacja>& proc, float& czas_spaw
 
 };
 
-void Licz::licz_zapotrzebowanie(const vector<operacja>& procLL_V1,
-	const vector<operacja>& procLL_V2,
-	const vector<operacja>& procRL_V1,
-	const vector<operacja>& procRL_V2,
-	const vector<zamowienie>& zamowienia)
+void Licz::licz_zapotrzebowanie()
+//const vector<Wczytaj::operacja>& procLL_V1,
+	//const vector<Wczytaj::operacja>& procLL_V2,
+	//const vector<Wczytaj::operacja>& procRL_V1,
+	//const vector<Wczytaj::operacja>& procRL_V2,
+	//const vector<Wczytaj::zamowienie>& zamowienia)
 {
 	float czas_spawacz = 0;
 	float czas_monter = 0;
 	float ilosc_monter = 0;
 	float ilosc_spawacz = 0;
 
-	zapotrzebowanie_proces(procLL_V1, czas_spawacz, czas_monter, zamowienia[0]);
-	zapotrzebowanie_proces(procLL_V2, czas_spawacz, czas_monter, zamowienia[1]);
-	zapotrzebowanie_proces(procRL_V1, czas_spawacz, czas_monter, zamowienia[2]);
-	zapotrzebowanie_proces(procRL_V2, czas_spawacz, czas_monter, zamowienia[3]);
+	zapotrzebowanie_czas(Wczytaj::GetInstance().LL_V1, czas_spawacz, czas_monter, Wczytaj::GetInstance().zamowienia[0]);
+	zapotrzebowanie_czas(Wczytaj::GetInstance().LL_V2, czas_spawacz, czas_monter, Wczytaj::GetInstance().zamowienia[1]);
+	zapotrzebowanie_czas(Wczytaj::GetInstance().RL_V1, czas_spawacz, czas_monter, Wczytaj::GetInstance().zamowienia[2]);
+	zapotrzebowanie_czas(Wczytaj::GetInstance().RL_V2, czas_spawacz, czas_monter, Wczytaj::GetInstance().zamowienia[3]);
 
 	ilosc_monter = czas_monter / ONE_DAY_TIME;
 	ilosc_spawacz = czas_spawacz / ONE_DAY_TIME;
@@ -49,24 +49,20 @@ void Licz::licz_zapotrzebowanie(const vector<operacja>& procLL_V1,
 	ilosc_spawacz = ceil(czas_spawacz / ONE_DAY_TIME);
 	cout << endl << "ilosc monter = " << ilosc_monter << "    ilosc spawacz = " << ilosc_spawacz << endl;
 
-	ilosc_monter = max(static_cast<float>(zamowienia[4].ilosc), ilosc_monter);
-	ilosc_monter = min(static_cast<float>(zamowienia[4].ilosc_max), ilosc_monter);
-	ilosc_spawacz = max(static_cast<float>(zamowienia[5].ilosc), ilosc_spawacz);
-	ilosc_spawacz = min(static_cast<float>(zamowienia[5].ilosc_max), ilosc_spawacz);
+	ilosc_monter = max(static_cast<float>(Wczytaj::GetInstance().zamowienia[4].ilosc), ilosc_monter);
+	ilosc_monter = min(static_cast<float>(Wczytaj::GetInstance().zamowienia[4].ilosc_max), ilosc_monter);
+	ilosc_spawacz = max(static_cast<float>(Wczytaj::GetInstance().zamowienia[5].ilosc), ilosc_spawacz);
+	ilosc_spawacz = min(static_cast<float>(Wczytaj::GetInstance().zamowienia[5].ilosc_max), ilosc_spawacz);
 
 	cout << endl << "po restrykcjach:" << endl << "ilosc monter = " << ilosc_monter << endl << "ilosc spawacz = " << ilosc_spawacz;
 
-	ilosc_pracownikow wyliczeni_pracownicy;
 	wyliczeni_pracownicy.ilosc_monter = ceil(ilosc_monter);
 	wyliczeni_pracownicy.ilosc_spawacz = ceil(ilosc_spawacz);
-
-	return wyliczeni_pracownicy;
-
 };
 
-void stworz_pracownikow(ilosc_pracownikow wyliczeni_pracownicy)
+void Licz::stworz_pracownikow()
 {
-	vector<Pracownik> vector_pracownikow;
+	
 	for (int i = 0; i < wyliczeni_pracownicy.ilosc_monter; i++)
 	{
 		//Pracownik a(i, 1);
@@ -78,12 +74,9 @@ void stworz_pracownikow(ilosc_pracownikow wyliczeni_pracownicy)
 	{
 		vector_pracownikow.emplace_back(i + 1 + wyliczeni_pracownicy.ilosc_monter, 1);
 	};
-	return vector_pracownikow;
-
-
 
 };
-
+/*
 vector<vector<int>> wczytaj_bazowy_harmonogram()
 {
 	vector<vector<int>> testowy;

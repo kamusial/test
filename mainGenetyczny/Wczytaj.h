@@ -35,7 +35,10 @@ class Wczytaj
 
 public:
 	friend class Licz;
-	Wczytaj();
+	
+	static Wczytaj& GetInstance();
+
+
 	void wczytaj_przejscia(string sciezka);
 	void wczytaj_bufory(string sciezka);
 	void wczytaj_zamowienia();
@@ -45,6 +48,11 @@ public:
 	
 
 private:
+	Wczytaj();
+
+	Wczytaj(const Wczytaj&) {}
+	Wczytaj& operator=(const Wczytaj&) {}
+
 	static void wczytaj_proces(string sciezka, vector<operacja>& op);
 	static void fix_bom_shit(ifstream& file);
 
