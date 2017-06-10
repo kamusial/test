@@ -13,8 +13,6 @@ int main()
 	
 
 	Wczytaj& wczytywanie = Wczytaj::GetInstance();
-	Wczytaj& wczytywanie2 = Wczytaj::GetInstance();
-
 	wczytywanie.wczytaj_przejscia("dane_in/przejscia.csv");
 	wczytywanie.wczytaj_bufory("dane_in/bufory.csv");
 	wczytywanie.wczytaj_zamowienia();

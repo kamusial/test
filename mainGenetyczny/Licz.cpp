@@ -25,11 +25,6 @@ void Licz::zapotrzebowanie_czas(const vector<Wczytaj::operacja>& proc, float& cz
 };
 
 void Licz::licz_zapotrzebowanie()
-//const vector<Wczytaj::operacja>& procLL_V1,
-	//const vector<Wczytaj::operacja>& procLL_V2,
-	//const vector<Wczytaj::operacja>& procRL_V1,
-	//const vector<Wczytaj::operacja>& procRL_V2,
-	//const vector<Wczytaj::zamowienie>& zamowienia)
 {
 	float czas_spawacz = 0;
 	float czas_monter = 0;
@@ -74,11 +69,4 @@ void Licz::stworz_pracownikow()
 	{
 		vector_pracownikow.emplace_back(i + 1 + wyliczeni_pracownicy.ilosc_monter, 1);
 	};
-
 };
-/*
-vector<vector<int>> wczytaj_bazowy_harmonogram()
-{
-	vector<vector<int>> testowy;
-	return testowy;
-};*/
