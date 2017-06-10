@@ -1,0 +1,17 @@
+﻿id;number;TPM;name
+1;20.58.02;1;Cięcie Ruckblech
+2;40.19.02/40.20.02;0;Zgrzewanie Verstärkung innen
+3;20.31.02/20.43.02;0;Spawanie ręczne Seitenteil aussen
+4;20.32.02/20.44.02;0;Spawanie ręczne Seitenteil innen
+5;20.35.02;0;Spawanie ręczne U-Profil (3)
+6;20.33.02;0;Spawanie ręczne Stütze vorne (1)
+7;20.34.02;0;Spawanie ręczne Stütze hinten (2)
+8;40.19.02/40.20.02;0;Zgrzewanie Stütze hinten 
+9;30.07.02 (400);1;Zgrzewanie ZSB Sitzgestell
+10;20.68.03;1;Spawanie SGR Sitzgestell RL
+11;20.91.03;0;Spawanie ręczne SGR DBFB
+12;65.01.02;0;Wiercenie i szlifowanie
+13;40.41.03;0;Tuckowanie SGR DBFB
+14;90.30.02;0;Pakowanie
+15;20.26.10;1;Spawanie części DBFB LL
+16;20.18.02 (430);1;Spawanie SGR Sitzgestell LL
