@@ -20,6 +20,7 @@ int main()
 	wczytywanie.wczytaj_procesy();
 
 	// nowa zmiana super
+	//2gi comment
 	
 	//Licz obliczanie;
 
