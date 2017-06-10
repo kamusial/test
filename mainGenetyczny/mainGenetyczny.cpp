@@ -24,7 +24,7 @@ int main()
 	obliczanie.licz_zapotrzebowanie();
 	obliczanie.stworz_pracownikow();
 
-	///kom
+	///komasdads
 
 	getchar(); //oczekiwanie na wciœniêcie klawisza
 	return 0;
