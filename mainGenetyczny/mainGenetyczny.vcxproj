@@ -138,30 +138,20 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
-    <ClInclude Include="functions.h" />
     <ClInclude Include="Genetyczny.h" />
     <ClInclude Include="Licz.h" />
-    <ClInclude Include="obliczenia.h" />
     <ClInclude Include="Pracownik.h" />
-    <ClInclude Include="Proces.h" />
     <ClInclude Include="Harmonogram.h" />
-    <ClInclude Include="startup.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Wczytaj.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="common.cpp" />
-    <ClCompile Include="functions.cpp" />
     <ClCompile Include="Genetyczny.cpp" />
     <ClCompile Include="Licz.cpp" />
     <ClCompile Include="mainGenetyczny.cpp" />
-    <ClCompile Include="obliczenia.cpp" />
     <ClCompile Include="Pracownik.cpp" />
-    <ClCompile Include="Proces.cpp" />
     <ClCompile Include="Harmonogram.cpp" />
-    <ClCompile Include="startup.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>

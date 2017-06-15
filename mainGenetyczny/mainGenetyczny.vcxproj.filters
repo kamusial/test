@@ -27,25 +27,10 @@
     <ClInclude Include="Pracownik.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Proces.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Genetyczny.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="startup.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="functions.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Harmonogram.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="obliczenia.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="common.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Wczytaj.h">
@@ -65,25 +50,10 @@
     <ClCompile Include="Pracownik.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Proces.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Genetyczny.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="startup.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="functions.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Harmonogram.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="obliczenia.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="common.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Wczytaj.cpp">
