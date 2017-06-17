@@ -9,6 +9,7 @@ class Harmonogram
 
 
 public:
+	void wczytaj();
 	void licz();
 	void wypisz();
 

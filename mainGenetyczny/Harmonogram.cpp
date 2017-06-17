@@ -1,6 +1,7 @@
 #include "stdafx.h"
 #include "Harmonogram.h"
 
+void wczytaj();
 void licz();
 void wypisz();
 
