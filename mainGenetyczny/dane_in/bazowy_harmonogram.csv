@@ -1,8 +1,5 @@
-﻿zamowienia;
-LL_V1 ;32
-LL_V2 ;11
-RL_V1 ;22
-RL_V2 ;33
-wymuszeni_pracownicy_min_max:
-monter ;2;3
-spawacz ;1;2
+﻿harmonogram;mon_spa;
+pracownik1 ;0;1;60;9;30;12;10;13;5;12;10;13;5;99;99;
+pracownik2 ;0;2;30;8;25;9;30;14;30;99;99;
+pracownik3 ;1;15;2;33;10;15;15;33;5;15;12;99;99;
+pracownik4 ;1;33;50;16;5;11;4;16;5;11;4;16;5;11;4;16;5;11;4;16;99;11;4;16;5;11;4;99;99;

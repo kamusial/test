@@ -35,6 +35,7 @@ class Wczytaj
 
 public:
 	friend class Licz;
+	friend class Harmonogram;
 	
 	static Wczytaj& GetInstance();
 
@@ -47,6 +48,7 @@ public:
 	void print_state(const std::ios& stream);
 	
 
+
 private:
 	Wczytaj();
 
@@ -55,5 +57,5 @@ private:
 
 	static void wczytaj_proces(string sciezka, vector<operacja>& op);
 	static void fix_bom_shit(ifstream& file);
-
+	
 };

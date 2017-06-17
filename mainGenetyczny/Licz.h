@@ -16,6 +16,8 @@ class Licz
 	ilosc_pracownikow wyliczeni_pracownicy;
 	vector<Pracownik> vector_pracownikow;
 public:
+	friend class Harmonogram;
+
 	Licz::Licz();
 
 	void zapotrzebowanie_czas(const vector<Wczytaj::operacja>& proc, float& spawacz, float& monter,
@@ -24,4 +26,8 @@ public:
 	void licz_zapotrzebowanie();
 
 	void stworz_pracownikow();
+
+	int getIloscMonter();
+	int getIloscSpawacz();
+
 }; 

@@ -70,3 +70,13 @@ void Licz::stworz_pracownikow()
 		vector_pracownikow.emplace_back(i + 1 + wyliczeni_pracownicy.ilosc_monter, 1);
 	};
 };
+
+int Licz::getIloscMonter()
+{
+	return wyliczeni_pracownicy.ilosc_monter;
+}
+
+int Licz::getIloscSpawacz()
+{
+	return wyliczeni_pracownicy.ilosc_spawacz;
+}

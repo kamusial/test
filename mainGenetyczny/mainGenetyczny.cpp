@@ -7,6 +7,7 @@
 #include "Pracownik.h"
 #include "Wczytaj.h"
 #include "Licz.h"
+#include "Harmonogram.h"
 
 int main()
 {
@@ -21,6 +22,10 @@ int main()
 	Licz obliczanie;
 	obliczanie.licz_zapotrzebowanie();
 	obliczanie.stworz_pracownikow();
+
+	Harmonogram harm;
+	harm.wczytaj(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
+	harm.licz(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
 
 
 	getchar(); //oczekiwanie na wciœniêcie klawisza
