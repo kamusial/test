@@ -25,7 +25,8 @@ int main()
 
 	Harmonogram harm;
 	harm.wczytaj(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
-	harm.licz(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
+	harm.przygotuj_do_liczenia(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
+	harm.funkcja_przystosowania(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
 
 
 	getchar(); //oczekiwanie na wciœniêcie klawisza

@@ -8,8 +8,8 @@
 class Harmonogram
 {
 	
-	vector<vector<short>> harmonogram;
-	vector<vector<short>> harmonogram_z_buforami;
+	vector<vector<short>> harmonogram_do_liczenia;
+	vector<vector<short>> harmonogram_do_liczenia_wynik;
 	vector<short> spis_pracownikow;
 	struct plan_pracownika 
 	{
@@ -24,9 +24,9 @@ class Harmonogram
 public:
 	void wczytaj(const int& ilosc_monter, const int& ilosc_spawacz);
 
-	void licz(const int& ilosc_monter, const int& ilosc_spawacz);
+	void przygotuj_do_liczenia(const int& ilosc_monter, const int& ilosc_spawacz);
+	void funkcja_przystosowania(const int& ilosc_monter, const int& ilosc_spawacz);
 	void wypisz();
-
 	Harmonogram();
 
 };

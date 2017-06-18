@@ -49,7 +49,7 @@ void Licz::licz_zapotrzebowanie()
 	ilosc_spawacz = max(static_cast<float>(Wczytaj::GetInstance().zamowienia[5].ilosc), ilosc_spawacz);
 	ilosc_spawacz = min(static_cast<float>(Wczytaj::GetInstance().zamowienia[5].ilosc_max), ilosc_spawacz);
 
-	cout << endl << "po restrykcjach:" << endl << "ilosc monter = " << ilosc_monter << endl << "ilosc spawacz = " << ilosc_spawacz;
+	cout << endl << "po restrykcjach:" << endl << "ilosc monter = " << ilosc_monter << endl << "ilosc spawacz = " << ilosc_spawacz << endl;
 
 	wyliczeni_pracownicy.ilosc_monter = ceil(ilosc_monter);
 	wyliczeni_pracownicy.ilosc_spawacz = ceil(ilosc_spawacz);
