@@ -26,17 +26,16 @@ void Harmonogram::wczytaj(const int& ilosc_monter, const int& ilosc_spawacz)
 		
 		do {
 			bazowy_harmonogram_csv >> plan.nr_maszyny >> ctmp >> plan.czas_na_maszynie >> ctmp;
-			if (plan.nr_maszyny < 99)
+			if (plan.nr_maszyny!= 99)
 			{
 				harmonogram_pracownikow[i].push_back(plan);
 			}
-		} while (plan.nr_maszyny < 99);
+		} while (plan.nr_maszyny != 99);
 
 	}
 
 	cout << "\nkoniec wczytywania harmonogramu pracownikow\n";
 };
-
 
 void Harmonogram::przygotuj_do_liczenia(const int& ilosc_monter, const int& ilosc_spawacz)
 
@@ -72,10 +71,12 @@ void Harmonogram::przygotuj_do_liczenia(const int& ilosc_monter, const int& ilos
 	}
 	cout << "\nkoniec wpisywania harmonogramu pracownikow do przeliczenia\n";
 	
-};
+}
+
 
 void Harmonogram::funkcja_przystosowania(const int& ilosc_monter, const int& ilosc_spawacz)
 {
+	cout << "\nstart";
 	int ilosc_czesci_LL_V1 = Wczytaj::GetInstance().zamowienia[0].ilosc;
 	int ilosc_start_LL_V1 = -1;
 	int ilosc_czesci_LL_V2 = Wczytaj::GetInstance().zamowienia[1].ilosc;
@@ -137,16 +138,17 @@ void Harmonogram::funkcja_przystosowania(const int& ilosc_monter, const int& ilo
 								harmonogram_do_liczenia[i][jj] = 0;
 							}
 							operacja_w_harmonogramie = true;
+							licznik_pola_pracownika += dlugosc_operacji;
 						}
 					}
-					licznik_pola_pracownika += 1 + pomocniczy_licznik;
-					pomocniczy_licznik = 0;
+					if (!operacja_w_harmonogramie)
+						licznik_pola_pracownika++;
 				} while ((!operacja_w_harmonogramie) && ((licznik_pola_pracownika + dlugosc_operacji - 1) < harmonogram_do_liczenia[i].size()));
 			}
 		}
 		if (!operacja_w_harmonogramie)
 		{
-			cout << "\n1czesc " << ilosc_start_LL_V2 << " dla LL_V2 nie miesci sie w harmonogramie";
+			cout << "\czesc " << ilosc_start_LL_V2 << " pierwsza operacja nieudana";
 		}
 
 
@@ -189,19 +191,18 @@ void Harmonogram::funkcja_przystosowania(const int& ilosc_monter, const int& ilo
 									pomocniczy_licznik++;
 								}
 								operacja_w_harmonogramie = true;
-
-							}
-
+								licznik_pola_pracownika += dlugosc_operacji;
+							}	
+							
 						}
-
-						licznik_pola_pracownika += 1 + pomocniczy_licznik;
-						pomocniczy_licznik = 0;
+						if (!operacja_w_harmonogramie)
+						licznik_pola_pracownika++;
 					} while ((!operacja_w_harmonogramie) && ((licznik_pola_pracownika + dlugosc_operacji - 1) < (harmonogram_do_liczenia[i].size())));
 				}
 			}
 			if ((!operacja_w_harmonogramie) && (!przeciazenie))
 			{
-				cout << "\n2czesc " << ilosc_start_LL_V2 << " dla LL_V2 nie miesci sie w harmonogramie";
+				cout << "\n-log-czesc " << ilosc_start_LL_V2 << " dla LL_V2 nie miesci sie w harmonogramie";
 				przeciazenie = true;
 			}
 
@@ -209,11 +210,35 @@ void Harmonogram::funkcja_przystosowania(const int& ilosc_monter, const int& ilo
 		if (!przeciazenie)
 		cout << "\nCzesc "<<ilosc_start_LL_V2<<" w harmonogramie ";
 	}
+	cout << endl;
 }
 
-void wypisz();
+void Harmonogram::wypisz(const int& ilosc_monter, const int& ilosc_spawacz)
+{
+	vector<int>czas_pracy_pracownika;
+	int czas_pomocniczy = -1;
 
-Harmonogram::Harmonogram()
+
+	for (int i = 0; i < ilosc_monter + ilosc_spawacz; i++)
+	{
+		czas_pomocniczy = 0;
+		for (int j = 0; j < harmonogram_do_liczenia_wynik[i].size(); j++)
+		{
+			if (harmonogram_do_liczenia_wynik[i][j] != 0)
+				czas_pomocniczy++;
+		}
+		czas_pracy_pracownika.push_back(czas_pomocniczy);
+		cout << "\nPracownik " << i << " pracuje przez " << czas_pomocniczy << "sekund";
+	}
+	cout << endl;
+}
+
+vector<vector<short>> Harmonogram::get_harmonogram_do_liczenia_wynik()
+{
+	return harmonogram_do_liczenia_wynik;
+}
+
+	Harmonogram::Harmonogram()
 {
 	
 };

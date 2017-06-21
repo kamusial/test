@@ -8,6 +8,7 @@
 #include "Wczytaj.h"
 #include "Licz.h"
 #include "Harmonogram.h"
+#include "Harmonogram_optymalny.h"
 
 int main()
 {
@@ -27,7 +28,10 @@ int main()
 	harm.wczytaj(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
 	harm.przygotuj_do_liczenia(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
 	harm.funkcja_przystosowania(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
+	harm.wypisz(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz());
 
+	Harmonogram_optymalny harm_opt;
+	harm_opt.optymalizuj(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz(), harm.get_harmonogram_do_liczenia_wynik());
 
 	getchar(); //oczekiwanie na wciœniêcie klawisza
 	return 0;
