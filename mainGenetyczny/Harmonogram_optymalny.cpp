@@ -3,7 +3,7 @@
 
 void Harmonogram_optymalny::optymalizuj(const int& ilosc_monter, const int& ilosc_spawacz, vector<vector<short>>& harmonogram_do_liczenia_wynik)
 {
-		int size = -1;
+	cout << "\nObcinanie harmonogramu";
 
 		for (int i = 0; i < ilosc_monter + ilosc_spawacz; i++)
 		{

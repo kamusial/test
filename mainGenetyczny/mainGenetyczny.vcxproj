@@ -138,7 +138,6 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Genetyczny.h" />
     <ClInclude Include="Harmonogram_optymalny.h" />
     <ClInclude Include="Licz.h" />
     <ClInclude Include="Pracownik.h" />
@@ -148,7 +147,6 @@
     <ClInclude Include="Wczytaj.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Genetyczny.cpp" />
     <ClCompile Include="Harmonogram_optymalny.cpp" />
     <ClCompile Include="Licz.cpp" />
     <ClCompile Include="mainGenetyczny.cpp" />

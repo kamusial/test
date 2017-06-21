@@ -2,8 +2,6 @@
 //
 
 #include "stdafx.h"
-#include "startup.h"
-#include "obliczenia.h"
 #include "Pracownik.h"
 #include "Wczytaj.h"
 #include "Licz.h"
@@ -32,6 +30,7 @@ int main()
 
 	Harmonogram_optymalny harm_opt;
 	harm_opt.optymalizuj(obliczanie.getIloscMonter(), obliczanie.getIloscSpawacz(), harm.get_harmonogram_do_liczenia_wynik());
+
 
 	getchar(); //oczekiwanie na wciœniêcie klawisza
 	return 0;

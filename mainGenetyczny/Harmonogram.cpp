@@ -76,7 +76,7 @@ void Harmonogram::przygotuj_do_liczenia(const int& ilosc_monter, const int& ilos
 
 void Harmonogram::funkcja_przystosowania(const int& ilosc_monter, const int& ilosc_spawacz)
 {
-	cout << "\nstart";
+	cout << "\nFunkcja przystosowania start";
 	int ilosc_czesci_LL_V1 = Wczytaj::GetInstance().zamowienia[0].ilosc;
 	int ilosc_start_LL_V1 = -1;
 	int ilosc_czesci_LL_V2 = Wczytaj::GetInstance().zamowienia[1].ilosc;
@@ -202,7 +202,7 @@ void Harmonogram::funkcja_przystosowania(const int& ilosc_monter, const int& ilo
 			}
 			if ((!operacja_w_harmonogramie) && (!przeciazenie))
 			{
-				cout << "\n-log-czesc " << ilosc_start_LL_V2 << " dla LL_V2 nie miesci sie w harmonogramie";
+				cout << "\n-czesc " << ilosc_start_LL_V2 << " dla LL_V2 nie miesci sie w harmonogramie";
 				przeciazenie = true;
 			}
 
@@ -218,7 +218,7 @@ void Harmonogram::wypisz(const int& ilosc_monter, const int& ilosc_spawacz)
 	vector<int>czas_pracy_pracownika;
 	int czas_pomocniczy = -1;
 
-
+	cout << "\nBazowy harmonogram";
 	for (int i = 0; i < ilosc_monter + ilosc_spawacz; i++)
 	{
 		czas_pomocniczy = 0;
@@ -228,7 +228,7 @@ void Harmonogram::wypisz(const int& ilosc_monter, const int& ilosc_spawacz)
 				czas_pomocniczy++;
 		}
 		czas_pracy_pracownika.push_back(czas_pomocniczy);
-		cout << "\nPracownik " << i << " pracuje przez " << czas_pomocniczy << "sekund";
+		cout << "\nPracownik " << i << " pracuje przez " << czas_pomocniczy << "sekund w calkowitym zalozonym czasie pracy";
 	}
 	cout << endl;
 }

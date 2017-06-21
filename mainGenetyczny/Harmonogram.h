@@ -1,6 +1,5 @@
 #pragma once
 #include "stdafx.h"
-#include "obliczenia.h"
 #include "Wczytaj.h"
 #include "Licz.h"
 

@@ -27,9 +27,6 @@
     <ClInclude Include="Pracownik.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Genetyczny.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="Harmonogram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -51,9 +48,6 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Pracownik.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="Genetyczny.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Harmonogram.cpp">
